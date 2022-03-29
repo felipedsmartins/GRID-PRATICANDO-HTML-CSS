@@ -1,0 +1,354 @@
+/* RESET DA PÁGINA*/
+
+
+body, p, h1, ul, li, blockquote {
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+
+    font-family: 'Vollkorn', serif;
+}
+
+li {
+
+    list-style: none;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+img {
+
+    max-width: 100%;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+/* Grid Geral*/
+
+.estrutura { 
+
+    display: grid;
+    grid-template-columns: minmax(160px, 300px) 3fr 300px;
+    grid-template-areas: 
+    "header header header"
+    "sidenav content anuncios"
+    "footer footer footer"
+       
+    ;
+}
+
+@media (max-width: 1200px) {
+
+ 
+.estrutura {
+
+    grid-template-areas:
+    
+    "header header header"
+    "sidenav content content"
+    "sidenav anuncios anuncios"
+    "footer footer footer"
+    ;
+}
+
+
+
+}
+
+
+@media (max-width: 760px) {
+
+.estrutura {
+grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "sidenav"
+    "content"
+    "anuncios"
+    "footer";
+
+    
+}
+}
+
+
+/* HEADER*/
+
+
+.header {
+    grid-area: header;
+    background: linear-gradient(135deg, #8844ee, #807df8);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 980px;
+    margin: 0 auto;
+    
+}
+
+@media (max-width: 760px) {
+
+ .header {grid-template-columns: auto;}
+
+
+.logo{
+
+    margin-bottom: 20px;
+}
+
+.header nav a {
+
+font-size: 1em;    
+}
+
+.header li + li {
+
+    margin-left: 10px;
+}
+
+}
+.header nav ul {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.header nav a {
+display: block;
+padding: 10px;
+color: #ffffff;
+font-size: 1.25em;
+background-color: rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+transition: 0.1s;
+
+}
+.header nav a:hover {    
+    
+    background-color: rgba(0, 0, 0, .5);
+    
+    }
+
+ .header li+li {
+
+    margin-left: 30px;
+ }   
+
+
+.logo {
+
+    max-width: 200px;
+}
+
+/* SIDENAV*/
+
+
+.sidenav {
+
+    grid-area: sidenav;
+    background: #fafbfc;
+    padding: 30px;
+}
+
+.sidenav li a {
+display: block;
+min-width: 60px;
+max-width: 100px;
+margin: 0 auto 30px auto;
+background: white;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+transition: .1s ease-out;
+
+}
+
+.sidenav li a:hover {
+   background-color: #B07dfb;
+    
+    }
+
+ @media (max-width: 760px) {
+
+.sidenav ul {
+
+    display: flex;
+
+}
+
+.sidenav ul li {
+
+    flex: 1 0 60px;
+
+}
+.sidenav {
+
+    padding: 0 30px;
+}
+.sidenav li a {
+
+    margin: 30px 30px 30px 0;
+}
+
+.sidenav {
+
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+-ms-overflow-style: -ms-autohiding-scrolbar;
+      
+}
+ }
+
+ 
+ 
+
+
+
+/*TITULO*/ 
+
+.titulo {
+
+    color: #807df8;  
+  }
+  
+  .titulo h1 {
+  
+      font-size: 3.75em;
+      line-height: 1;
+      font-weight: 700;
+  }
+
+p {
+
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0, 0, 0, .7);
+}
+
+.destaque {
+
+   font-size: 1em; 
+    color: #807df8; 
+    max-width: 16em;
+}
+
+.informacoes p+p {
+margin-top: 30px;
+
+}
+
+/* CONTENT*/
+.content {
+
+    grid-area: content;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+
+    }
+
+@media (max-width: 600px) {
+
+.content {
+
+    grid-template-columns: auto;
+}
+
+
+}
+
+.coluna-larga {
+    grid-column: 1/-1;
+   
+
+}
+
+.imagem-lobo1 {
+grid-row: span 2;
+align-self: flex-end;
+
+}
+
+.imagem-lobo2 {
+
+    align-self: flex-end;
+}
+/* ANUNCIOS*/
+
+.anuncios {
+
+    grid-area: anuncios;
+    background: #fafbfc;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+}
+
+.citacao, .atribultos {
+
+    background: linear-gradient(135deg, #8844ee, #807df8); 
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    padding: 30px;
+    border-radius: 5px; 
+    align-self: flex-start;
+    
+
+}
+
+.citacao p {
+
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+
+.atribultos li {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.12em;
+    padding: 15px;
+    
+
+}
+
+.atribultos li+li {
+
+    border-top: 2px solid #807dfb ;
+}
+/* FOOTER*/
+
+.footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, #8844ee, #807df8); 
+
+
+}
+    
+
+.footer p {
+
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+}
